@@ -62,7 +62,7 @@
 
 ![bluez连接NintendoSwitch](https://github.com/mumumusuc/BT-NS-ProController/blob/master/images/bt-pro.png)
 
-![识别为蓝牙Pro手柄](https://github.com/mumumusuc/BT-NS-ProController/blob/master/images/sample.png)
+![识别为蓝牙Pro手柄](https://github.com/mumumusuc/BT-NS-ProController/blob/master/images/sample.jpg)
 
 
 
