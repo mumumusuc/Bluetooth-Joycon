@@ -1,22 +1,39 @@
 # Bluetooth Joycon
 
-## Android
+## Android(Need Root!)
 
 *需要Android9-Pie，tested on my Nexus5x with PixelExperience9.0*
 
 1. 设置蓝牙PID、VID
     ```
-    @ /etc/bluetooth/bt_did.conf
+    // remount /system as "rw"
+    # adb shell
+    bullhead:$ su
+    bullhead:# mount -o remount,rw /system
+    
+    // pull file
+    bullhead:# cp /etc/bluetooth/bt_did.conf /sdcard
+    # adb pull /sdcard/bt_did.conf .
+    
+    // modify file
+    @ bt_did.conf
     - productId = 0x1200
     + productId = 0x2009
     + vendorId = 0x057E
+    
+    // push file
+    # adb push bt_did.conf /sdcard
+    bullhead:# cp /sdcard/bt_did.conf /etc/bluetooth/ 
     ```
     
 2. 安装Xposed
 
-    >TBD
+    Android9.0可用的[Xposed](https://github.com/ElderDrivers/EdXposed)。
     
-3. NFC功能
+    因为这个项目会使用Xposed禁用除了Hid-Host之外的所有蓝牙服务，所以若不能安装Xposed框架则需修改编译你的系统源码。源码非相关修改将在下节进行说明。
+    
+    
+3. NFC功能&蓝牙服务
 
     因为Pro手柄的nfc数据需要362字节的InputReport，而在AOSP9.0-Pie的蓝牙源码中将HID_DEV的Report数据大小设置为了64字节。如果需要实现这一功能，你需要修改编译AOSP9.0-Pie源码。
     
