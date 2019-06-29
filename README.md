@@ -1,4 +1,42 @@
-# BT-NS-ProController
+# Bluetooth Joycon
+
+## Android
+
+*需要Android9-Pie，tested on my Nexus5x with PixelExperience9.0*
+
+1. 设置蓝牙PID、VID
+    ```
+    @ /etc/bluetooth/bt_did.conf
+    - productId = 0x1200
+    + productId = 0x2009
+    + vendorId = 0x057E
+    ```
+    
+2. 安装Xposed
+
+    >TBD
+    
+3. NFC功能
+
+    因为Pro手柄的nfc数据需要362字节的InputReport，而在AOSP9.0-Pie的蓝牙源码中将HID_DEV的Report数据大小设置为了64字节。如果需要实现这一功能，你需要修改编译AOSP9.0-Pie源码。
+    
+    *建议修改device项目，而非直接修改AOSP代码*
+    
+    ```
+    @ device/lge/bullhead/bluetooth/conf/bt_did.conf
+    - productId = 0x1200
+    + productId = 0x2009
+    + vendorId = 0x057E
+    
+    @ device/lge/bullhead/bluetooth/bdroid_buildcfg.h
+    + #define HID_DEV_MTU_SIZE 512 // 362+ is OK
+    
+    @ device/lge/bullhead/aosp_bullhead.mk
+    + PRODUCT_COPY_FILES += device/lge/bullhead/bluetooth/conf/bt_did.conf:system/etc/bluetooth/bt_did.conf
+    ```
+
+## Linux
+
 
 ### HidClient
     
