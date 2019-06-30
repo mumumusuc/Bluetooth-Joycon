@@ -1,0 +1,3 @@
+[submodule "LibJoycon"]
+	path = LibJoycon
+	url = git@github.com:mumumusuc/LibJoycon.git

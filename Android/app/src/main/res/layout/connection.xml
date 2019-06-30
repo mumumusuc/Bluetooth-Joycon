@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="4dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginHorizontal="128dp"
+            android:background="@drawable/bg_splash"
+            android:layout_gravity="center_horizontal|bottom">
+        <Button
+                android:id="@+id/device_label"
+                style="@android:style/Widget.Material.Button"
+                android:backgroundTint="@color/gamepad_btn_bg"
+                android:textColor="@color/gamepad_btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nintendo Switch"
+                android:layout_centerInParent="true"/>
+        <TextView android:id="@+id/device_status"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:singleLine="false"
+                  android:gravity="center"
+                  android:layout_centerHorizontal="false"
+                  android:layout_below="@+id/device_label"
+                  android:text="Not connected"
+                  android:layout_margin="16dp"/>
+        <ProgressBar
+                android:id="@+id/wait_connect"
+                android:indeterminate="true"
+                android:visibility="gone"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <ImageView
+            android:layout_marginTop="64dp"
+            android:id="@+id/ns_logo"
+            android:elevation="4dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_width="@dimen/gamepad_btn_size"
+            android:layout_height="@dimen/gamepad_btn_size"
+            android:src="@drawable/ns_logo"
+            android:padding="8dp"
+            android:backgroundTint="@android:color/white"
+            android:background="@drawable/bg_round"
+            android:transitionName="ns_logo"
+            android:contentDescription="ns_logo"/>
+
+</FrameLayout>

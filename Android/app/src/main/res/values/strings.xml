@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DroidPro</string>
+    <string name="devices_label">Connect to:</string>
+    <string name="status_label">Status:</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_disconnecting">Disconnecting…</string>
+    <string name="cross">cross</string>
+    <string name="circle">circle</string>
+    <string name="triangle">triangle</string>
+    <string name="square">square</string>
+
+    <item type="id" name="tag_pressed" />
+    <item type="id" name="tag_x_pos" />
+    <item type="id" name="tag_y_pos" />
+</resources>

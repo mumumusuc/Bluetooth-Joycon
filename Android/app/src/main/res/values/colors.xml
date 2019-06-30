@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/dark_gray</color>
+    <color name="colorPrimaryDark">@color/dark_gray</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="dark_gray">#303030</color>
+    <color name="card_bg">@android:color/white</color>
+    <color name="gamepad_btn_text">@android:color/white</color>
+    <color name="gamepad_btn_bg">@android:color/black</color>
+</resources>

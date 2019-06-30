@@ -1,0 +1,92 @@
+echo '05 01 09 05 a1 01 06 01 ff 85 21 09 21 75 08 95 30 81 02 85 30 09 30 75 08 95 30 81 02 85 31 09 31 75 08 96 69 01 81 02 85 32 09 32 75 08 96 69 01 81 02 85 33 09 33 75 08 96 69 01 81 02 85 3f 05 09 19 01 29 10 15 00 25 01 75 01 95 10 81 02 05 01 09 39 15 00 25 07 75 04 95 01 81 42 05 09 75 04 95 01 81 01 05 01 09 30 09 31 09 33 09 34 16 00 00 27 ff ff 00 00 75 10 95 04 81 02 06 01 ff 85 01 09 01 75 08 95 30 91 02 85 10 09 10 75 08 95 30 91 02 85 11 09 11 75 08 95 30 91 02 85 12 09 12 75 08 95 30 91 02 c0' | xxd -r -p | hidrd-convert -o spec
+Usage Page (Desktop),               ; Generic desktop controls (01h)
+Usage (Gamepad),                    ; Gamepad (05h, application collection)
+Collection (Application),
+    Usage Page (FF01h),             ; FF01h, vendor-defined
+    // input 0x21,48bytes
+    Report ID (33),
+    Usage (21h),
+    Report Size (8),
+    Report Count (48),
+    Input (Variable),
+    // input 0x30,48bytes
+    Report ID (48),
+    Usage (30h),
+    Report Size (8),
+    Report Count (48),
+    Input (Variable),
+    // input 0x31,361bytes
+    Report ID (49),
+    Usage (31h),
+    Report Size (8),
+    Report Count (361),
+    Input (Variable),
+    // input 0x32,361bytes
+    Report ID (50),
+    Usage (32h),
+    Report Size (8),
+    Report Count (361),
+    Input (Variable),
+    // input 0x33,361bytes
+    Report ID (51),
+    Usage (33h),
+    Report Size (8),
+    Report Count (361),
+    Input (Variable),
+    // input 0x3F,
+    Report ID (63),
+    Usage Page (Button),            ; Button (09h)
+    Usage Minimum (01h),
+    Usage Maximum (10h),
+    Logical Minimum (0),
+    Logical Maximum (1),
+    Report Size (1),
+    Report Count (16),
+    Input (Variable),
+    Usage Page (Desktop),           ; Generic desktop controls (01h)
+    Usage (Hat Switch),             ; Hat switch (39h, dynamic value)
+    Logical Minimum (0),
+    Logical Maximum (7),
+    Report Size (4),
+    Report Count (1),
+    Input (Variable, Null State),
+    Usage Page (Button),            ; Button (09h)
+    Report Size (4),
+    Report Count (1),
+    Input (Constant),
+    Usage Page (Desktop),           ; Generic desktop controls (01h)
+    Usage (X),                      ; X (30h, dynamic value)
+    Usage (Y),                      ; Y (31h, dynamic value)
+    Usage (Rx),                     ; Rx (33h, dynamic value)
+    Usage (Ry),                     ; Ry (34h, dynamic value)
+    Logical Minimum (0),
+    Logical Maximum (65535),
+    Report Size (16),
+    Report Count (4),
+    Input (Variable),
+    Usage Page (FF01h),             ; FF01h, vendor-defined
+    // output 0x01 ,48bytes
+    Report ID (1),
+    Usage (01h),
+    Report Size (8),
+    Report Count (48),
+    Output (Variable),
+    // output 0x10 ,48bytes
+    Report ID (16),
+    Usage (10h),
+    Report Size (8),
+    Report Count (48),
+    Output (Variable),
+    // output 0x011 ,48bytes
+    Report ID (17),
+    Usage (11h),
+    Report Size (8),
+    Report Count (48),
+    Output (Variable),
+    // output 0x12 ,48bytes
+    Report ID (18),
+    Usage (12h),
+    Report Size (8),
+    Report Count (48),
+    Output (Variable),
+End Collection
