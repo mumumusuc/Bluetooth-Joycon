@@ -1,6 +1,6 @@
 # Bluetooth Joycon
 
-## Android(Need Root!)
+## Android(Need Root?也许不需要，需验证)
 
 *需要Android9-Pie，tested on my Nexus5x with PixelExperience9.0*
 
@@ -56,7 +56,7 @@
     # lunch aosp_bullhead-userdebug
     # mka bacon -j8
     ```
-    
+    （*也许不需要，需验证*）
     若之前不能安装Xposed框架，则需要修改如下内容(这会影响你手机蓝牙的正常使用，请谨慎)：
     ```
     @ packages/apps/Bluetooth/res/values/config.xml
